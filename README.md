@@ -2,9 +2,12 @@
 
 #### 官网下载go
 
-//fish配置文件添加环境变量
-/Users/anjuke/.config/fish/config.fish 
+####fish配置文件添加环境变量
+~/.config/fish/config.fish 
+```
+....
 set -x PATH /opt/homebrew/bin/ /usr/local/bin /usr/bin /bin /usr/sbin /sbin /Library/Apple/usr/bin /opt/homebrew/bin/ /usr/local/go/bin $PATH
+```
 
 
 //fish提示符配置全文
