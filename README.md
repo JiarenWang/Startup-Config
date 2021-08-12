@@ -9,6 +9,11 @@
 #### 生成ssh钥匙对 ```ssh-keygen -t ed25519 -C "your_email@example.com" ```
 #### 显示所有设置过的环境变量``` env ```
 #### 清除屏幕或窗口内容  ```clear```
+#### # 设置提交代码时的用户信息 --global表示全局
+``` 
+$ git config [--global] user.name "[name]"
+$ git config [--global] user.email "[email address]"
+```
 #### bash配置文件:
 ```
 全局
