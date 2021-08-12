@@ -1,8 +1,8 @@
 # Startup-Config
 
-#### 官网下载go
+### 官网下载go
 
-#### fish配置文件添加环境变量
+### fish配置文件添加环境变量
 ~/.config/fish/config.fish 
 ```
 ....
@@ -10,9 +10,10 @@ set -x PATH /opt/homebrew/bin/ /usr/local/bin /usr/bin /bin /usr/sbin /sbin /Lib
 ```
 
 
-//fish提示符配置全文
+### fish提示符配置全文
 /Users/anjuke/.config/fish/functions
 
+```
 function fish_prompt --description 'Write out the prompt'
     set -l last_pipestatus $pipestatus
     set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
@@ -44,22 +45,23 @@ function fish_prompt --description 'Write out the prompt'
 
     echo -n -s (date +%T)' ' (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal " "$prompt_status $suffix
 end
+```
 
 
-//gopath工作区(bin，pkg，src), goroot编译器等
+### gopath工作区(bin，pkg，src), goroot编译器等
 默认/usr/local/go/
 go env查看go的环境
 
-//安装redis mysql etcd brew install 安装
+###安装redis mysql etcd brew install 安装
 
 
-//安装 protoc
+### 安装 protoc
 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip
 unzip protoc-3.14.0-linux-x86_64.zip
 mv bin/protoc /usr/local/bin/
 
 
-//mysql初始命令
+### mysql初始命令
 
 We've installed your MySQL database without a root password. To secure it run:
     mysql_secure_installation
@@ -90,7 +92,8 @@ To have launchd start mysql now and restart at login:
 Or, if you don't want/need a background service you can just run:
   mysql.server start
 
-//etcd
+
+### etcd
   brew services start etcd
 Or, if you don't want/need a background service you can just run:
   /opt/homebrew/opt/etcd/bin/etcd
@@ -98,7 +101,7 @@ Or, if you don't want/need a background service you can just run:
 🍺  /opt/homebrew/Cellar/etcd/3.5.0: 9 files, 74.0MB
 
 
-//redis
+### redis
 To start redis:
   brew services start redis
 Or, if you don't want/need a background service you can just run:
@@ -107,7 +110,7 @@ Or, if you don't want/need a background service you can just run:
 🍺  /opt/homebrew/Cellar/redis/6.2.5: 14 files, 2MB
 
 
-//安装goctl
+### 安装goctl
 GO111MODULE=on GOPROXY=https://goproxy.cn/,direct go get -u github.com/tal-tech/go-zero/tools/goctl
 
 把 /Users/anjuke/go/bin 添加到fish的环境里
