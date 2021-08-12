@@ -1,17 +1,37 @@
 # Startup-Config
 
-### 官网下载go
-
-### fish配置文件添加环境变量
-~/.config/fish/config.fish 
+## 常用
+#### 切换为bash ```chsh -s /bin/bash```
+#### 切换为zsh ```chsh -s /bin/zsh```
+#### 修改最高权限 ```chmod 777 /Users/anjuke/go/bin ```
+#### .ssh路径 ```~/.ssh/known_hosts```
+#### host路径 ``` /etc/hosts```
+#### 生成ssh钥匙对 ```ssh-keygen -t ed25519 -C "your_email@example.com" ```
+#### bash配置文件:
 ```
-....
+全局
+/etc/profile
+/etc/profile.d/*.sh
+/etc/bashrc
+个人用户生效
+~/.bash_profile
+~/.bashrc
+```
+#### ~/.profile内容:
+``` 
+export https_proxy=http://127.0.0.1:1087 http_proxy=http://127.0.0.1:1087 all_proxy=socks5://127.0.0.1:1080
+添加环境变量  export PATH=/opt/homebrew/bin/:$PATH
+export SCCACHE_CACHE_SIZE="1G"
+```
+
+#### fish配置文件添加环境变量
+路径: ~/.config/fish/config.fish 
+```
 set -x PATH /opt/homebrew/bin/ /usr/local/bin /usr/bin /bin /usr/sbin /sbin /Library/Apple/usr/bin /opt/homebrew/bin/ /usr/local/go/bin $PATH
 ```
 
-
-### fish提示符配置全文
-/Users/anjuke/.config/fish/functions
+#### fish提示符配置全文
+路径 ~/.config/fish/functions/fish_prompt.fish
 
 ```
 function fish_prompt --description 'Write out the prompt'
@@ -47,21 +67,24 @@ function fish_prompt --description 'Write out the prompt'
 end
 ```
 
+## go-zero开发流程
+#### 官网安装go
+https://golang.org/doc/install
+#### GoPath工作区(包含bin，pkg，src), goRoot(包含编译器等)
+默认```/usr/local/go/```
+查看go的环境```go env```
+安装go依赖```go mod tidy```
 
-### gopath工作区(bin，pkg，src), goroot编译器等
-默认/usr/local/go/
-go env查看go的环境
+#### 安装redis mysql etcd 
+通过```brew install redis mysql etcd ```安装
 
-###安装redis mysql etcd brew install 安装
-
-
-### 安装 protoc
-wget https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip
-unzip protoc-3.14.0-linux-x86_64.zip
-mv bin/protoc /usr/local/bin/
+#### 安装 protoc
+```wget https://github.com/protocolbuffers/protobuf/releases/download/v3.14.0/protoc-3.14.0-linux-x86_64.zip```
+```unzip protoc-3.14.0-linux-x86_64.zip```
+```mv bin/protoc /usr/local/bin/```
 
 
-### mysql初始命令
+####  mysql
 
 We've installed your MySQL database without a root password. To secure it run:
     mysql_secure_installation
@@ -93,7 +116,7 @@ Or, if you don't want/need a background service you can just run:
   mysql.server start
 
 
-### etcd
+#### etcd
   brew services start etcd
 Or, if you don't want/need a background service you can just run:
   /opt/homebrew/opt/etcd/bin/etcd
@@ -101,7 +124,7 @@ Or, if you don't want/need a background service you can just run:
 🍺  /opt/homebrew/Cellar/etcd/3.5.0: 9 files, 74.0MB
 
 
-### redis
+#### redis
 To start redis:
   brew services start redis
 Or, if you don't want/need a background service you can just run:
@@ -110,10 +133,10 @@ Or, if you don't want/need a background service you can just run:
 🍺  /opt/homebrew/Cellar/redis/6.2.5: 14 files, 2MB
 
 
-### 安装goctl
-GO111MODULE=on GOPROXY=https://goproxy.cn/,direct go get -u github.com/tal-tech/go-zero/tools/goctl
+#### 安装goctl
+```GO111MODULE=on GOPROXY=https://goproxy.cn/,direct go get -u github.com/tal-tech/go-zero/tools/goctl```
 
-把 /Users/anjuke/go/bin 添加到fish的环境里
-chmod 777 /Users/anjuke/go/bin 修改权限
+把 ```~/go/bin``` 添加到fish的环境里 ```export PATH=~/go/bin/:$PATH```
+修改权限 ```chmod 777 ~/go/bin``` 
 
 
