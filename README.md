@@ -8,6 +8,7 @@
 #### host路径 ``` /etc/hosts```
 #### 生成ssh钥匙对 ```ssh-keygen -t ed25519 -C "your_email@example.com" ```
 #### 显示所有设置过的环境变量``` env ```
+#### 清除屏幕或窗口内容  ```clear```
 #### bash配置文件:
 ```
 全局
