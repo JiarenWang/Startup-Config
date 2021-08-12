@@ -2,7 +2,7 @@
 
 #### 官网下载go
 
-####fish配置文件添加环境变量
+#### fish配置文件添加环境变量
 ~/.config/fish/config.fish 
 ```
 ....
