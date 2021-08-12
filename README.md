@@ -9,7 +9,32 @@
 #### 生成ssh钥匙对 ```ssh-keygen -t ed25519 -C "your_email@example.com" ```
 #### 显示所有设置过的环境变量``` env ```
 #### 清除屏幕或窗口内容  ```clear```
-#### # 设置提交代码时的用户信息 --global表示全局
+#### 显示当前的Git配置 ```$ git config --list```
+#### 编辑Git配置文件 ``` git config -e [--global]```
+#### git代理设置
+```
+//设置全局代理
+//http
+git config --global https.proxy http://127.0.0.1:1080
+//https
+git config --global https.proxy https://127.0.0.1:1080
+//使用socks5代理的 例如ss，ssr 1080是windows下ss的默认代理端口,mac下不同，或者有自定义的，根据自己的改
+git config --global http.proxy socks5://127.0.0.1:1080
+git config --global https.proxy socks5://127.0.0.1:1080
+
+//只对github.com使用代理，其他仓库不走代理
+git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+git config --global https.https://github.com.proxy socks5://127.0.0.1:1080
+//取消github代理
+git config --global --unset http.https://github.com.proxy
+git config --global --unset https.https://github.com.proxy
+
+//取消全局代理
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+```
+#### 设置提交代码时的用户信息 --global表示全局
 ``` 
 $ git config [--global] user.name "[name]"
 $ git config [--global] user.email "[email address]"
