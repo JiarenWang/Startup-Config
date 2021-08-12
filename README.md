@@ -7,6 +7,7 @@
 #### .ssh路径 ```~/.ssh/known_hosts```
 #### host路径 ``` /etc/hosts```
 #### 生成ssh钥匙对 ```ssh-keygen -t ed25519 -C "your_email@example.com" ```
+#### 显示所有设置过的环境变量``` env ```
 #### bash配置文件:
 ```
 全局
