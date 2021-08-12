@@ -1,6 +1,6 @@
 # Startup-Config
 
-## 官网下载go
+#### 官网下载go
 
 //fish配置文件添加环境变量
 /Users/anjuke/.config/fish/config.fish 
