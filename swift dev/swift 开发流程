@@ -1,0 +1,81 @@
+
+// 更新所有git 默认main分支
+utils/update-checkout --clone-with-ssh
+
+// 注意设置作者
+git config user.name "jiaren wang"
+git config user.email "jr.w@foxmail.com"
+
+//git 更改最近提交的作者信息
+git commit --amend --reset-author
+
+# 修改最后一次提交的 commit 信息和作者, 可单独修改
+git commit --amend --message=" " --author="jiangliheng <jiang_liheng@163.com>"
+
+//压缩N个提交
+git rebase -i HEAD~N
+# Re-run N times, reformatting each commit.
+
+//格式化第一个commit并提交
+git-clang-format HEAD~1
+git add .
+git commit --amend --no-edit
+git rebase --continue
+git rebase main
+
+//强制提交
+git push origin branch1 -f
+
+# 新建一个分支，并切换到该分支
+$ git checkout -b [branch]
+
+# 列出所有本地分支和远程分支
+$ git branch -a
+
+# 提交暂存区到仓库区
+$ git commit -m [message]
+
+
+// build 
+utils/build-script --skip-build-benchmarks \
+  --skip-ios --skip-watchos --skip-tvos --swift-darwin-supported-archs "$(uname -m)" \
+  --sccache --release-debuginfo --swift-disable-dead-stripping --test
+
+
+//test
+utils/run-test --lit ../llvm-project/llvm/utils/lit/lit.py \
+  ../build/Ninja-RelWithDebInfoAssert/swift-macosx-$(uname -m)/test-macosx-$(uname -m) \
+  --filter="refactoring/ConvertAsync/basic.swift" -v
+
+  utils/run-test --lit ../llvm-project/llvm/utils/lit/lit.py \
+  ../build/Ninja-RelWithDebInfoAssert/swift-macosx-$(uname -m)/test-macosx-$(uname -m) \
+  --filter="Constraints/closures.swift" -v
+
+
+  ../llvm-project/llvm/utils/lit/lit.py -s -vv \
+  ../build/Ninja-RelWithDebInfoAssert/swift-macosx-$(uname -m)/test-macosx-$(uname -m) \
+  --filter="SourceKit/DocumentStructure/structure.swift" -v
+
+  Failed Tests (4):
+  Swift(macosx-arm64) :: Generics/associated_type_anchor_rdar47605019.swift
+  Swift(macosx-arm64) :: Index/kinds.swift
+  Swift(macosx-arm64) :: SILGen/convenience_init_peer_delegation.swift
+  Swift(macosx-arm64) :: SourceKit/CodeFormat/indent-computed-property.swift
+  Swift(macosx-arm64) :: SourceKit/DocumentStructure/structure.swift
+
+  test/Constraints/diagnostics.swift
+  test/diagnostics/pretty-printed-diagnostics.swift
+  test/expr/closure/closures.swift
+  validation-test/compiler_crashers_2_fixed/0119-rdar33613329.swift
+
+
+ @rintaro Please review [ParseDecl.cpp](asdasd)
+
+
+
+
+
+
+
+
+
