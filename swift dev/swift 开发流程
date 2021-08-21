@@ -74,8 +74,14 @@ utils/run-test --lit ../llvm-project/llvm/utils/lit/lit.py \
 
 
  @rintaro Please review [ParseDecl.cpp](asdasd)
-
-
+ 
+ 
+ 测试标准
+ lit llvm i... tool
+ RUN 执行命令
+ CHECK 检查 
+ 一般是 diff 比较差异 或者 Check 检查文本
+ 
 
 
 
