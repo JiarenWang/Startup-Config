@@ -2,9 +2,14 @@ export SCCACHE_CACHE_SIZE="50G" 缓存大小
 export SCCACHE_DIR="/Volumes/SSD/sccahe" 缓存路径
 
 
+git push -v origin refs/heads/wjr:refs/heads/wjr  --force 强推命令
+
+
 https://github.com/apple/swift/blob/main/docs/HowToGuides/GettingStarted.md
 // 更新所有git 默认main分支
 utils/update-checkout --clone-with-ssh
+更新命令有时会失败,是网络原因. 每次运行前以下代理命令执行一下.
+export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087
 
 // 注意设置作者
 git config user.name "jiaren wang"
