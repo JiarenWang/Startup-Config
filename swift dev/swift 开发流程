@@ -51,6 +51,9 @@ utils/build-script --skip-build-benchmarks \
   --sccache --release-debuginfo --swift-disable-dead-stripping --test
 
 
+  // CHECK: [[@LINE-1]]:5 |  @LINE会被文件当前的行数替代  CHECK: 冒号后面的文本都会进行匹配
+
+
 //test
 utils/run-test --lit ../llvm-project/llvm/utils/lit/lit.py \
   ../build/Ninja-RelWithDebInfoAssert/swift-macosx-$(uname -m)/test-macosx-$(uname -m) \
