@@ -92,8 +92,48 @@ utils/run-test --lit ../llvm-project/llvm/utils/lit/lit.py \
  
 
 
+ C++
+ //在这里typename 和class没区别
+ template <typename... identifier> func(identifier paramater) 例子:template<typename T> void swap(T&  t1, &T t2) 调用方式  func<int>((a, b),<int>可以省略,因为可以推断类型
+ template <class... identifier> func(identifier paramater) 
+
+
+//C++ 标准库提供了三种智能指针类型：std::unique_ptr、std::shared_ptr 和 std::weak_ptr 智能指针可处理对其拥有的内存的分配和删除
+//std::string 字符串
+//使用 vector 替代原始数组:
+  vector<string> apples;
+  apples.push_back("Granny Smith");
+
+//map字典
+map<string, string> apple_color;
+apple_color["Granny Smith"] = "Green";
+
+//auto
+用 auto 替代显式类型名称
+C++11 引入了 auto 关键字，以便可将其用于变量、函数和模板声明中。 auto 会指示编译器推导对象的类型，这样你就无需显式键入类型。 当推导出的类型是嵌套模板时，auto 尤其有用：
+map<int,list<string>>::iterator i = m.begin(); // C-style
+auto i = m.begin(); // modern C++
+
+
+//用 constexpr 表达式替代宏
+#define SIZE 10 // C-style
+constexpr int size = 10; // modern C++
+
+//统一初始化 https://docs.microsoft.com/zh-cn/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-160#uniform-initialization
+
+//Lambda 表达式 等于闭包 https://docs.microsoft.com/zh-cn/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-160#lambda-expressions
+可以将 lambda 表达式 [=](int i) { return i > x && i < y; } 可以读取为“采用类型 int 的单个参数并返回一个布尔值来表示此参数是否大于 x 并且小于 y 的函数”。 请注意，可在 lambda 中使用来自周围上下文的 x 和 y 变量。 [=] 会指定通过值捕获这些变量；换言之，对于这些值，lambda 表达式具有自己的值副本。
 
 
 
 
+//指针 *p
+通过访问p->属性
+
+//引用
+int &b = a;
+此时b就是a的引用，或者称之为别名。如果修改b的值，那么a的值也会相应地发生改变。如b=1,那么a也就会跟着等于1。这种方式在函数传参的时候很常见，如果想函数执行完改变原参数的值，就应该在传参的时候，传入原来的实参的引用。
+
+token tok = nextToken()//这样是拷贝 左右变量没有关联
+token &tok = nextToken()//这样是起别名
 
