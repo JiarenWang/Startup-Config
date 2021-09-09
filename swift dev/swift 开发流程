@@ -125,8 +125,6 @@ constexpr int size = 10; // modern C++
 可以将 lambda 表达式 [=](int i) { return i > x && i < y; } 可以读取为“采用类型 int 的单个参数并返回一个布尔值来表示此参数是否大于 x 并且小于 y 的函数”。 请注意，可在 lambda 中使用来自周围上下文的 x 和 y 变量。 [=] 会指定通过值捕获这些变量；换言之，对于这些值，lambda 表达式具有自己的值副本。
 
 
-
-
 //指针 *p
 通过访问p->属性
 
@@ -136,4 +134,16 @@ int &b = a;
 
 token tok = nextToken()//这样是拷贝 左右变量没有关联
 token &tok = nextToken()//这样是起别名
+
+
+//诊断信息
+所有诊断      DiagnosticsAll.def
+语法及类型诊断 DiagnosticsSema.def
+
+宏就两种DIAG和FIXIT,  实现在DiagnosticsCommon.h 
+ERROR, WARNING, REMARK都是DIAG
+
+每定义一个DIAG和FIXIT就会生成一个类.
+
+
 
