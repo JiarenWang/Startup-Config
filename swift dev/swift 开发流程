@@ -156,3 +156,8 @@ void orint_stacktrace() {
   }
   free(stacktrace);
 }
+
+cmd K cmd 0 折叠所有
+cmk k cmd J 展开所有
+option 上下左右 行上下左右移动
+
