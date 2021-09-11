@@ -89,6 +89,8 @@ utils/run-test --lit ../llvm-project/llvm/utils/lit/lit.py \
  RUN 执行命令
  CHECK 检查 
  一般是 diff 比较差异 或者 Check 检查文本
+
+ // expect-error {{2-2=sadasda}} //第二列后面插入的文本, 用来验证FixIt
  
 
 
