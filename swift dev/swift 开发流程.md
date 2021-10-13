@@ -11,6 +11,12 @@ utils/update-checkout --clone-with-ssh
 更新命令有时会失败,是网络原因. 每次运行前以下代理命令执行一下.
 export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087
 
+
+
+//查看当前仓库配置信息
+git config --local  --list
+
+
 // 注意设置作者
 git config user.name "jiaren wang"
 git config user.email "jr.w@foxmail.com"
