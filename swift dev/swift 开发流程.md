@@ -2,6 +2,11 @@ export SCCACHE_CACHE_SIZE="50G" 缓存大小
 export SCCACHE_DIR="/Volumes/SSD/sccahe" 缓存路径
 
 
+
+
+pyenv global 3.10.0
+pyenv global system
+
 git push -v origin refs/heads/wjr:refs/heads/wjr  --force 强推命令
 
 
