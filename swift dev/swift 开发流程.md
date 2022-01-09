@@ -7,7 +7,7 @@ git remote add wjr git@github.com:JiarenWang/swift.git
 pyenv global 3.10.0
 pyenv global system
 
-git push -v origin refs/heads/wjr:refs/heads/wjr  --force 强推命令
+git push -v <#远程仓库名称#> refs/heads/wjr:refs/heads/wjr  --force 强推命令
 
 
 https://github.com/apple/swift/blob/main/docs/HowToGuides/GettingStarted.md
