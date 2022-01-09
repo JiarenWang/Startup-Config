@@ -1,9 +1,9 @@
 export SCCACHE_CACHE_SIZE="50G" 缓存大小
 export SCCACHE_DIR="/Volumes/SSD/sccahe" 缓存路径
+git remote add wjr git@github.com:JiarenWang/swift.git
 
 
-
-
+// 切换python版本
 pyenv global 3.10.0
 pyenv global system
 
@@ -16,7 +16,16 @@ utils/update-checkout --clone-with-ssh
 更新命令有时会失败,是网络原因. 每次运行前以下代理命令执行一下.
 export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087
 
+// 重新构建编译器
+ninja -C ../build/Ninja-RelWithDebInfoAssert/swift-macosx-$(uname -m) swift-frontend
 
+// 重新构建所有
+ninja -C ../build/Ninja-RelWithDebInfoAssert/swift-macosx-$(uname -m)
+ 
+
+//
+utils/run-test 测试之前过重新构建所有依赖。
+lit.py 跑测试不会构建依赖。
 
 //查看当前仓库配置信息
 git config --local  --list
@@ -62,7 +71,7 @@ utils/build-script --skip-build-benchmarks \
   --sccache --release-debuginfo --swift-disable-dead-stripping --test
 
 
-  // CHECK: [[@LINE-1]]:5 |  @LINE会被文件当前的行数替代  CHECK: 冒号后面的文本都会进行匹配
+// CHECK: [[@LINE-1]]:5 |  @LINE会被文件当前的行数替代  CHECK: 冒号后面的文本都会进行匹配
 
 
 //test
