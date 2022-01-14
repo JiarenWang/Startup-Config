@@ -1,5 +1,5 @@
 export SCCACHE_CACHE_SIZE="50G" 缓存大小
-export SCCACHE_DIR="/Volumes/SSD/sccahe" 缓存路径
+export SCCACHE_DIR="/Volumes/My Passport/sccahe" 缓存路径
 git remote add wjr git@github.com:JiarenWang/swift.git
 
 
