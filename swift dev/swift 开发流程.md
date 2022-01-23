@@ -1,3 +1,10 @@
+// 一些诊断严重依赖格式字符串参数，因此通过在代码库中搜索部分发出的消息来找到它们的实现可能很困难。要在每个发出的消息的末尾打印相应的诊断名称，请使用-Xfrontend -debug-diagnostic-names参数。
+swiftc -Xfrontend -debug-diagnostic-names /Users/anjuke/Desktop/file.swift //可以在诊断信息后输出额外的信息 error warning的名称 [expected_lbrace_class] [extra_rbrace]
+
+//swiftc -Xfrontend -debug-constraints file.swift
+C++ 打印调用栈 https://www.google.com/search?q=C%2B%2B+%E6%89%93%E5%8D%B0%E8%B0%83%E7%94%A8%E6%A0%88&oq=C%2B%2B+%E6%89%93%E5%8D%B0%E8%B0%83%E7%94%A8%E6%A0%88&aqs=chrome..69i57j0i333l2j69i59.4928j0j7&sourceid=chrome&ie=UTF-8
+
+
 export SCCACHE_CACHE_SIZE="50G" 缓存大小
 export SCCACHE_DIR="/Volumes/My Passport/sccahe" 缓存路径
 git remote add wjr git@github.com:JiarenWang/swift.git
