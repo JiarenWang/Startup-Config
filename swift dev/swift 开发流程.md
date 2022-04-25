@@ -1,3 +1,37 @@
+lib为swift 编译器及相关
+
+D: Swift standard library
+
+D: XCTest overlay
+
+D: SILOptimizer, Swift Benchmark Suite
+
+D: Markup, Migrator, lib/Syntax
+
+D: AST, Basic, Parse, Sema
+
+D: SIL, SILGen, everything in Swift not covered by someone else
+
+D: IDE, Index, SourceKit, swift-ide-test
+
+D: Demangler, IRGen, Runtime
+
+D: SymbolGraphGen
+
+D: Apple contact for non-corelibs overlays
+
+D: Foundation overlay
+
+D: Reflection, SwiftRemoteMirror
+
+D: Debug info
+
+D: ClangImporter, Serialization, PrintAsObjC, Driver, Frontend
+
+D: Dispatch overlay
+
+D: SIL diagnostics passes, sanitizers
+
 // 一些诊断严重依赖格式字符串参数，因此通过在代码库中搜索部分发出的消息来找到它们的实现可能很困难。要在每个发出的消息的末尾打印相应的诊断名称，请使用-Xfrontend -debug-diagnostic-names参数。
 swiftc -Xfrontend -debug-diagnostic-names /Users/anjuke/Desktop/file.swift //可以在诊断信息后输出额外的信息 error warning的名称 [expected_lbrace_class] [extra_rbrace]
 

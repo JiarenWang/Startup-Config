@@ -1,3 +1,6 @@
+# ------------------------GO------------------------
+国产HTTP框架
+
 # ------------------------JS------------------------
 ## array
 var cars=new Array();
@@ -48,7 +51,15 @@ JavaScript 严格模式(strict mode)不允许使用未声明的变量。
 在每个代码块中 JavaScript 
 
 # ------------------------CSS------------------------
+    class 选择器
+    .center {text-align:center;}
 
+     id 选择器
+     #para1
+     {
+         text-align:center;
+         color:red;
+     }
 
 
 
